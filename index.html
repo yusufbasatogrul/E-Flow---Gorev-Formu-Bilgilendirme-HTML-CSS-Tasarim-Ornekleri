@@ -1,0 +1,210 @@
+<style>
+  #eflowLeaveHeader{width:100%}
+  #eflowLeaveHeader *{box-sizing:border-box}
+  #eflowLeaveHeader img{max-width:100%;height:auto;display:block}
+
+  @media (max-width:640px){
+    #eflowLeaveHeader .h-wrap{flex-direction:column!important;align-items:flex-start!important}
+    #eflowLeaveHeader .content-wrap{flex-direction:column!important;gap:12px!important}
+    #eflowLeaveHeader .logo-box{width:74px!important;height:74px!important}
+    #eflowLeaveHeader .logo-box img{width:60px!important;height:auto!important}
+    #eflowLeaveHeader .right-box{min-width:0!important;width:100%!important;text-align:left!important}
+    #eflowLeaveHeader .prog-row{justify-content:flex-start!important}
+    #eflowLeaveHeader .bars{gap:5px!important;flex-wrap:wrap!important}
+  }
+</style>
+
+<div id="eflowLeaveHeader">
+  <div style="
+    width:100%;
+    background:#fff;
+    border:1px solid #f0f0f0;
+    border-radius:16px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.06);
+    overflow:hidden;
+  ">
+    <div style="height:6px;background:linear-gradient(90deg,#2f5cff 0%,#8aa4ff 60%,#ffffff 100%)"></div>
+
+    <div style="padding:22px;">
+      <div class="h-wrap" style="display:flex;align-items:flex-start;gap:16px;justify-content:flex-start;max-width:100%;">
+        <!-- Logo -->
+        <div class="logo-box" style="
+          width:140px;height:140px;flex-shrink:0;
+          border-radius:14px;background:#f7f7f7;border:1px solid #eee;
+          display:flex;align-items:center;justify-content:center;
+          overflow:hidden;
+        ">
+          <img
+            src="https://demo.eflow.com.tr/Img/MusteriLogo.png"
+            alt="Logo"
+            style="width:70px;height:auto;display:block;"
+          />
+        </div>
+
+        <div class="content-wrap" style="flex:1;display:flex;gap:14px;align-items:flex-start;min-width:0;max-width:100%;">
+          
+          <div style="text-align:left;flex:1;min-width:0;">
+            <div style="
+              display:inline-block;padding:6px 10px;border-radius:999px;
+              background:#f3f6ff;color:#2f5cff;font-size:12px;font-weight:700;
+              letter-spacing:.2px;margin-bottom:10px;
+              max-width:100%;
+            ">
+              İZİN TALEP SÜRECİ
+            </div>
+
+            <h2 style="margin:0;font-size:22px;font-weight:800;color:#1f2937;word-break:break-word;">
+              İzin Talep Formu
+            </h2>
+
+            
+            <div style="margin-top:8px;font-size:13px;line-height:18px;color:#64748b;font-weight:800;word-break:break-word;">
+              Talep Numarası:
+              <span style="color:#0f172a;font-weight:900">%surec_numarasi%</span>
+            </div>
+
+            <p style="margin:8px 0 0;font-size:14px;line-height:22px;color:#6b7280;max-width:100%;word-break:break-word;">
+              Lütfen talebinize devam edebilmek için gerekli tüm alanların doğru şekilde doldurulduğundan emin olun.
+            </p>
+          </div>
+
+          
+          <div class="right-box" style="text-align:right;min-width:260px;max-width:100%;">
+            
+            <div style="margin-top:6px;">
+              <span style="display:none;" data-if-status="İzin Formu Giriliyor">
+                <span style="display:inline-block;padding:7px 10px;border-radius:999px;
+                             background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;
+                             font-size:12px;font-weight:900;white-space:nowrap;">
+                  İzin Formu Giriliyor
+                </span>
+              </span>
+
+              <span style="display:none;" data-if-status="İş Günü Bilgilendirme">
+                <span style="display:inline-block;padding:7px 10px;border-radius:999px;
+                             background:#f5f3ff;border:1px solid #ddd6fe;color:#5b21b6;
+                             font-size:12px;font-weight:900;white-space:nowrap;">
+                  İş Günü Bilgilendirme
+                </span>
+              </span>
+
+              <span style="display:none;" data-if-status="Yönetici Onayında">
+                <span style="display:inline-block;padding:7px 10px;border-radius:999px;
+                             background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
+                             font-size:12px;font-weight:900;white-space:nowrap;">
+                  Yönetici Onayında
+                </span>
+              </span>
+
+              <span style="display:none;" data-if-status="IK Onayında">
+                <span style="display:inline-block;padding:7px 10px;border-radius:999px;
+                             background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;
+                             font-size:12px;font-weight:900;white-space:nowrap;">
+                  IK Onayında
+                </span>
+              </span>
+
+              
+              <span id="statusFallback" style="display:inline-block;padding:7px 10px;border-radius:999px;
+                           background:#f1f5f9;border:1px solid #e2e8f0;color:#0f172a;
+                           font-size:12px;font-weight:900;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;">
+                %status%
+              </span>
+            </div>
+
+            
+            <div style="margin-top:10px;">
+              <div class="prog-row" style="display:flex;align-items:center;justify-content:flex-end;gap:10px;max-width:100%;">
+                <div id="pctText" style="font-size:12px;font-weight:900;color:#64748b;min-width:44px;">%0</div>
+
+                <div class="bars" style="display:flex;align-items:center;gap:6px;max-width:100%;">
+                  <span id="lvl1" style="display:inline-block;height:10px;width:36px;border-radius:999px;background:#e5e7eb;"></span>
+                  <span id="lvl2" style="display:inline-block;height:10px;width:60px;border-radius:999px;background:#e5e7eb;"></span>
+                  <span id="lvl3" style="display:inline-block;height:10px;width:84px;border-radius:999px;background:#e5e7eb;"></span>
+                  <span id="lvl4" style="display:inline-block;height:10px;width:108px;border-radius:999px;background:#e5e7eb;"></span>
+                </div>
+              </div>
+
+              <div id="stepText" style="margin-top:6px;font-size:11px;color:#94a3b8;">
+                İlerleme durumu
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;border-top:1px solid #f2f2f2;"></div>
+
+      
+      <div style="
+        margin-top:14px;display:flex;gap:10px;align-items:center;
+        padding:12px 14px;border-radius:12px;
+        background:#fff7ed;border:1px solid #fed7aa;
+        color:#9a3412;font-size:13px;line-height:19px;font-weight:800;
+        max-width:100%;
+      ">
+        <div style="
+          width:28px;height:28px;flex-shrink:0;border-radius:8px;
+          background:#ffedd5;color:#9a3412;
+          display:flex;align-items:center;justify-content:center;
+        ">
+          <span style="font-size:16px;line-height:1;font-weight:900;">&#8505;</span>
+        </div>
+
+        <div style="flex:1;min-width:0;word-break:break-word;">
+          %bilgilendirme%
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function run() {
+        var status = (String("%status%") || "").trim();
+
+        var map = {
+          "İzin Formu Giriliyor":  { level: 1, pct: 25,  barColor:"#2563eb", textColor:"#1d4ed8", step:"Adım 1 / 4" },
+          "İş Günü Bilgilendirme": { level: 2, pct: 50,  barColor:"#7c3aed", textColor:"#5b21b6", step:"Adım 2 / 4" },
+          "Yönetici Onayında":     { level: 3, pct: 75,  barColor:"#f59e0b", textColor:"#9a3412", step:"Adım 3 / 4" },
+          "IK Onayında":           { level: 4, pct: 100, barColor:"#10b981", textColor:"#065f46", step:"Adım 4 / 4" }
+        };
+
+        var chips = document.querySelectorAll("#eflowLeaveHeader [data-if-status]");
+        var matched = false;
+
+        for (var i = 0; i < chips.length; i++) {
+          var expected = (chips[i].getAttribute("data-if-status") || "").trim();
+          chips[i].style.display = (expected === status) ? "inline" : "none";
+          if (expected === status) matched = true;
+        }
+
+        var fallback = document.querySelector("#eflowLeaveHeader #statusFallback");
+        if (fallback) fallback.style.display = matched ? "none" : "inline-block";
+
+        var cfg = map[status] || { level: 0, pct: 0, barColor:"#94a3b8", textColor:"#64748b", step:"" };
+
+        var pctText = document.querySelector("#eflowLeaveHeader #pctText");
+        var stepText = document.querySelector("#eflowLeaveHeader #stepText");
+        if (pctText) { pctText.textContent = "%" + cfg.pct; pctText.style.color = cfg.textColor; }
+        if (stepText) { stepText.textContent = cfg.step || "İlerleme durumu"; }
+
+        var off = "#e5e7eb";
+        var lvls = [
+          document.querySelector("#eflowLeaveHeader #lvl1"),
+          document.querySelector("#eflowLeaveHeader #lvl2"),
+          document.querySelector("#eflowLeaveHeader #lvl3"),
+          document.querySelector("#eflowLeaveHeader #lvl4")
+        ];
+
+        for (var j = 0; j < lvls.length; j++) {
+          if (!lvls[j]) continue;
+          lvls[j].style.background = (j < cfg.level) ? cfg.barColor : off;
+        }
+      }
+
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+      else run();
+    })();
+  </script>
+</div>
